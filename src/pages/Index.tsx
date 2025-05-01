@@ -7,8 +7,12 @@ import FeatureSection from '@/components/FeatureSection';
 import TokenomicsSection from '@/components/TokenomicsSection';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useWallet } from '@solana/wallet-adapter-react';
+import WalletBalance from '@/components/WalletBalance';
 
 const Index = () => {
+  const { publicKey } = useWallet();
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -17,6 +21,24 @@ const Index = () => {
         <Hero />
         <FeatureSection />
         <TokenomicsSection />
+        
+        {/* Wallet Section - Only shown when connected */}
+        {publicKey && (
+          <section className="py-8 md:py-12 bg-muted">
+            <div className="container">
+              <h2 className="mb-6">Your Wallet</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <WalletBalance />
+                <div className="md:col-span-2 bg-card rounded-lg border p-4 flex items-center">
+                  <div>
+                    <p className="text-sm text-muted-foreground">Connected Address</p>
+                    <p className="font-mono text-xs md:text-sm break-all">{publicKey.toString()}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
         
         {/* Call to Action Section */}
         <section className="py-16 md:py-24 bg-gradient-primary text-white">
