@@ -1,0 +1,31 @@
+// SolCharge DePIN Project Configuration
+{
+  "projectName": "SolCharge",
+  "projectStructure": {
+    "app": {
+      "description": "Next.js application code"
+    },
+    "contracts": {
+      "description": "Solana smart contracts"
+    },
+    "lib": {
+      "description": "Shared utility functions"
+    },
+    "public": {
+      "description": "Static assets and PWA files"
+    },
+    "components": {
+      "description": "React components"
+    }
+  },
+  "rules": {
+    "componentNaming": "PascalCase",
+    "hooks": "camelCase with 'use' prefix",
+    "constants": "UPPER_SNAKE_CASE",
+    "types": "PascalCase with 'T' prefix or interface naming"
+  },
+  "commitRules": {
+    "frequency": "After each significant feature/component implementation",
+    "messageFormat": "feat/fix/docs/style/refactor: concise description"
+  }
+} 
