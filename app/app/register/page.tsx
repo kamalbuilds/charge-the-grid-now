@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -70,7 +69,7 @@ const RegisterPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
       
       <div className="container py-12">
         <h1 className="mb-2">Register Your <span className="gradient-text">Charger</span></h1>
@@ -328,7 +327,7 @@ const RegisterPage = () => {
       </div>
       
       <div className="mt-auto">
-        <Footer />
+        
       </div>
     </div>
   );

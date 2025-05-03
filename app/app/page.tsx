@@ -12,7 +12,7 @@ export default function HomePage() {
       <Hero />
       <FeatureSection />
       <TokenomicsSection />
-      <Footer />
+      
     </main>
   );
 }

@@ -7,6 +7,8 @@ import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
 
 export default function RootLayout({
   children,
@@ -28,7 +30,9 @@ export default function RootLayout({
           <Sonner />
           <TooltipProvider>
             <WalletProvider>
+              <Navigation />
               {children}
+              <Footer />
             </WalletProvider>
           </TooltipProvider>
         </QueryClientProvider>

@@ -2,13 +2,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+
 
 const NotFound = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
       
       <div className="flex-grow flex items-center justify-center">
         <div className="container max-w-md text-center">
@@ -23,7 +22,6 @@ const NotFound = () => {
         </div>
       </div>
       
-      <Footer />
     </div>
   );
 };
