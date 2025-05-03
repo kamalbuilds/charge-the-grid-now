@@ -1,7 +1,6 @@
 
 import React from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+
 import TokenomicsSection from '@/components/TokenomicsSection';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
@@ -9,7 +8,7 @@ import { Progress } from '@/components/ui/progress';
 const TokenomicsPage = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
       
       <div className="container py-12">
         <h1 className="mb-2">SolCharge <span className="gradient-text">Tokenomics</span></h1>
@@ -215,7 +214,7 @@ const TokenomicsPage = () => {
       </div>
       
       <div className="mt-16">
-        <Footer />
+        
       </div>
     </div>
   );

@@ -1,71 +1,88 @@
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
 import { ArrowRight, Zap, MapPin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative py-20 overflow-hidden bg-background">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center">
-          <div className="lg:w-1/2 mb-12 lg:mb-0">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-primary">Decentralized</span> EV Charging Network
+    <div className="relative overflow-hidden bg-hero-pattern py-16 md:py-24">
+      {/* Gradient overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-background/80 backdrop-blur-sm"></div>
+      
+      <div className="container relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 className="mb-6">
+              <span className="block">Decentralized EV Charging</span>
+              <span className="gradient-text">Powered by Solana</span>
             </h1>
-            <p className="mt-4 text-xl text-muted-foreground max-w-lg">
-              Connect, charge, and earn crypto with the world's first decentralized EV charging infrastructure powered by Solana.
+            
+            <p className="text-lg text-muted-foreground mb-8 md:pr-12">
+              SolCharge revolutionizes EV infrastructure with a decentralized network that rewards charger hosts, reduces costs for drivers, and accelerates the transition to sustainable energy.
             </p>
             
-            <div className="mt-8 flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/register"
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 md:py-3 md:text-lg md:px-8"
-              >
-                Register Your Charger
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-              <Link
-                href="/map"
-                className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-foreground bg-background hover:bg-muted md:py-3 md:text-lg md:px-8"
-              >
-                Find Chargers
-                <MapPin className="ml-2 h-5 w-5" />
-              </Link>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-gradient-primary button-glow">
+                <Link href="/map">Find Chargers</Link>
+              </Button>
+              <Button size="lg" variant="outline">
+                <Link href="/register">Host a Charger</Link>
+              </Button>
             </div>
             
-            <div className="mt-10 grid grid-cols-3 gap-8">
-              <div>
-                <p className="text-3xl font-bold">500+</p>
-                <p className="text-sm text-muted-foreground">Charging Stations</p>
+            <div className="grid grid-cols-3 gap-4 mt-12">
+              <div className="text-center">
+                <div className="text-2xl font-bold gradient-text">500+</div>
+                <div className="text-sm text-muted-foreground">Active Stations</div>
               </div>
-              <div>
-                <p className="text-3xl font-bold">20k+</p>
-                <p className="text-sm text-muted-foreground">Monthly Users</p>
+              <div className="text-center">
+                <div className="text-2xl font-bold gradient-text">10K+</div>
+                <div className="text-sm text-muted-foreground">Users</div>
               </div>
-              <div>
-                <p className="text-3xl font-bold">3M+</p>
-                <p className="text-sm text-muted-foreground">kWh Delivered</p>
+              <div className="text-center">
+                <div className="text-2xl font-bold gradient-text">350K+</div>
+                <div className="text-sm text-muted-foreground">kWh Delivered</div>
               </div>
             </div>
           </div>
           
-          <div className="lg:w-1/2 relative">
-            <div className="relative z-10 rounded-lg overflow-hidden shadow-xl">
-              <img 
-                src="/images/ev-charging.jpg" 
-                alt="Electric vehicle charging station" 
-                className="w-full h-auto object-cover"
-              />
+          <div className="relative">
+            <div className="bg-white rounded-lg shadow-xl p-6 md:p-8 md:-rotate-3 transform transition-transform hover:rotate-0">
+              <div className="aspect-video bg-gradient-primary rounded-md mb-6 flex items-center justify-center">
+                <span className="text-5xl">🔌</span>
+              </div>
+              <div className="space-y-4">
+                <div>
+                  <div className="text-sm font-medium text-muted-foreground">Charger ID</div>
+                  <div className="font-mono text-xs bg-muted p-2 rounded">0x8f...3d9e</div>
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-muted-foreground">Location</div>
+                  <div className="font-medium">123 Main Street, Miami, FL</div>
+                </div>
+                <div className="flex justify-between">
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground">Cost</div>
+                    <div className="font-medium">0.05 $CHARGE / kWh</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground">Status</div>
+                    <div className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                      Available
+                    </div>
+                  </div>
+                </div>
+                <Button className="w-full bg-gradient-primary button-glow">Connect & Charge</Button>
+              </div>
             </div>
-            <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
-            <div className="absolute -top-6 -left-6 w-64 h-64 bg-secondary/20 rounded-full blur-3xl"></div>
+            
+            <div className="hidden md:block absolute -bottom-12 -right-12 w-64 h-64 bg-gradient-primary rounded-full opacity-20 blur-3xl"></div>
           </div>
         </div>
       </div>
-      
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-muted/40 to-transparent"></div>
-    </section>
+    </div>
   );
 };
 

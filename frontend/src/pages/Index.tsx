@@ -1,7 +1,6 @@
 
 import React from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+
 import Hero from '@/components/Hero';
 import FeatureSection from '@/components/FeatureSection';
 import TokenomicsSection from '@/components/TokenomicsSection';
@@ -15,7 +14,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
       
       <main className="flex-grow">
         <Hero />
@@ -60,7 +59,7 @@ const Index = () => {
         </section>
       </main>
       
-      <Footer />
+      
     </div>
   );
 };

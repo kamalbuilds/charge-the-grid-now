@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
-import Navigation from '@/components/Navigation';
-import Footer from '@/components/Footer';
+
 import SearchFilters from '@/components/map/SearchFilters';
 import ChargerMap from '@/components/map/ChargerMap';
 import ChargerList from '@/components/map/ChargerList';
@@ -38,7 +37,7 @@ const MapPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navigation />
+      
       
       <div className="container py-8">
         <h1 className="mb-6">Find EV <span className="gradient-text">Chargers</span></h1>
@@ -73,7 +72,7 @@ const MapPage = () => {
       </div>
       
       <div className="mt-auto">
-        <Footer />
+        
       </div>
     </div>
   );
