@@ -27,7 +27,7 @@ export default function MapBox({
     // Setup map only once
     if (!map.current && mapContainer.current) {
       // Set access token
-      mapboxgl.accessToken = '';
+      mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || '';
       
       // Initialize map
       map.current = new mapboxgl.Map({
