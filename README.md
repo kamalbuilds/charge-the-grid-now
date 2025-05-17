@@ -40,6 +40,9 @@ SolCharge/
 └── README.md            # Project documentation
 ```
 
+## Demo Video
+
+
 ## 🧰 Technology Stack
 
 - **Frontend**: Next.js, React, TailwindCSS
